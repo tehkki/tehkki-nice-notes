@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Starting String Boot Application</title>
+    </head>
+    <body>
+        <p>Total number of notes: <span th:text="${#arrays.length(notes)}"></span></p>
+
+        <div th:each="note : ${notes}" >
+            <br/>
+            <div th:text="${note.getNoteHeader()}"/>
+            <div th:text="${note.getNoteBody()}"/>
+            <div th:text="'Category: ' + ${note.getNoteCategory()}"/>
+            <div th:text="'Created by ' + ${note.getNoteCreator().getUserFirstName()} + ' ' + ${note.getNoteCreator().getUserLastName()}"/>
+            <div th:text="${note.getNoteDate()}"/>
+            <br/>
+        </div>
+    </body>
+</html>
