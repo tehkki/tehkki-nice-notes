@@ -15,9 +15,10 @@ public class User {
         userFirstName = firstName;
         userLastName = lastName;
         emailAddress = email;
+
+        userId = User.lastUserId;
         //increase user id by 1
         User.lastUserId++;
-        userId = User.lastUserId;
     }
 
 //    a BAD constructor, allows not setting properties and using class as is with "null" values

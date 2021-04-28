@@ -1,3 +1,4 @@
+import com.app.services.NoteStorage;
 import model.Category;
 import model.Note;
 import model.User;

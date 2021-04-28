@@ -1,8 +1,11 @@
+package com.app.services;
+
 import model.Note;
 import model.User;
 
 import java.util.*;
 
+// Class with all operations that can be done with notes
 public class NoteStorage {
 
     // All notes are stored here
