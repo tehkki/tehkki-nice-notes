@@ -1,6 +1,6 @@
 package model.enums;
 
-public enum CategoryName {
+public enum CategoryEnum {
     THOUGHTS("#Thoughts"),
     DIARY("#MyDiary"),
     WORK("#Work"),
@@ -8,7 +8,7 @@ public enum CategoryName {
 
     private String name;
 
-    CategoryName(String name){
+    CategoryEnum(String name){
         this.name = name;
     }
 

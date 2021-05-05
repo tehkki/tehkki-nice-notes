@@ -1,6 +1,6 @@
 package model;
 
-import model.enums.CategoryName;
+import model.enums.CategoryEnum;
 
 import java.util.Date;
 
@@ -11,7 +11,7 @@ public class Note {
     private String noteBody;
     private Date noteDate;
     private User noteCreator;
-    private CategoryName noteCategory;
+    private CategoryEnum noteCategory;
 
     // getters/setters:
     public String getNoteHeader() {
@@ -42,11 +42,11 @@ public class Note {
         return noteCreator;
     }
 
-    public CategoryName getNoteCategory() {
+    public CategoryEnum getNoteCategory() {
         return noteCategory;
     }
 
-    public void setNoteCategory(CategoryName noteCategory) {
+    public void setNoteCategory(CategoryEnum noteCategory) {
         this.noteCategory = noteCategory;
     }
 
@@ -57,15 +57,21 @@ public class Note {
         this.noteBody = body;
         this.noteDate = date;
         this.noteCreator = creator;
-        this.noteCategory = CategoryName.UNCATEGORISED;
+        this.noteCategory = CategoryEnum.UNCATEGORISED;
     }
 
     // constructor with category:
-    public Note(String header, String body, Date date, User creator, CategoryName categoryName) {
+    public Note(String header, String body, Date date, User creator, CategoryEnum categoryEnum) {
         this.noteHeader = header;
         this.noteBody = body;
         this.noteDate = date;
         this.noteCreator = creator;
-        this.noteCategory = categoryName;
+        this.noteCategory = categoryEnum;
+    }
+
+    // empty constructor:
+    public Note(){
+        noteDate = new Date();
+        noteCategory = CategoryEnum.UNCATEGORISED;
     }
 }

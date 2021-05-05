@@ -1,11 +1,13 @@
-package com.app.services;
+package com.app.dao;
 
 import model.Note;
 import model.User;
+import org.springframework.stereotype.Component;
 
 import java.util.*;
 
-// Class with all operations that can be done with notes
+// In-memory storage
+@Component
 public class NoteStorage {
 
     // All notes are stored here
