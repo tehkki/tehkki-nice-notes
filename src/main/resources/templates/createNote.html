@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Create new note</title>
+    </head>
+    <body>
+        <form th:action="@{/create-new-note}" th:object="${newNote}" method="POST">
+            <div><input type="text" placeholder="Header" th:field="*{noteHeader}"></div>
+            <div><input type="text" placeholder="Note" th:field="*{noteBody}"></div>
+            <div th:text="'Current time: ' + ${newNote.getNoteDate()}"></div>
+            <div th:text="'Category: ' + ${newNote.getNoteCategory()}"></div>
+
+            <div><input type="submit" value="Add note!"></div>
+        </form>
+
+        <div th:each="error : ${validationErrors}" >
+            <div style="color: red" th:text="${error}"></div>
+        </div>
+    </body>
+</html>
